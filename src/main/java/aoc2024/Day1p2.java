@@ -6,14 +6,14 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Day2 {
+public class Day1p2 {
 
     List<Integer> left = new ArrayList<>();
     List<Integer> right = new ArrayList<>();
     List<Pair> pairs = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        Day2 day1 = new Day2();
+        Day1p2 day1 = new Day1p2();
         List<String> input = Files.readAllLines(Paths.get("src/main/resources/day1/input"));
         day1.parse(input);
         day1.calc();

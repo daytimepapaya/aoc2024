@@ -22,6 +22,7 @@ public class Day5 {
         for (Update u : updates) {
             if (check(u)) total += getMiddle(u);
         }
+        System.out.println(total);
     }
 
     int getMiddle(Update u) {
@@ -29,8 +30,16 @@ public class Day5 {
     }
 
     boolean check(Update u) {
-        for (int page : u.pages) {
-
+        for (int i = 0; i < u.pages.length; i++) {
+            for (Order order : pageOrderingRules) {
+                if (order.before == u.pages[i]) {
+                    for (int j = 0; j < i; j++) {
+                        if (order.after == u.pages[j]) {
+                            return false;
+                        }
+                    }
+                }
+            }
         }
         return true;
     }
